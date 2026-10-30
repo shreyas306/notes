@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  transition: background-color 0.2s ease;
+}
+
+/* Main App */
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+.app.light {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Dark Mode */
+.app.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Container */
+.notes-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: inherit;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+.theme-btn:hover {
+  background-color: #4f46e5;
+}
+
+/* Input Section */
+.note-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+/* Input Box - Light Mode */
+.app.light .note-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  background-color: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Input Box - Dark Mode */
+.app.dark .note-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  background-color: #1f2937;
+  color: #ffffff;
+  border: 1px solid #6b7280;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Input Focus */
+.note-input input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Placeholder */
+.note-input input::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Add Note Button */
+.add-btn {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: #4338ca;
+}
+
+/* Notes Heading */
+h2 {
+  font-size: 21px;
+  margin-bottom: 18px;
+  color: inherit;
+}
+
+/* Notes List */
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Note */
+.note-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Note Text */
+.note-item span {
+  flex: 1;
+  color: inherit;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Note - Light Mode */
+.note-item.light {
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+}
+
+/* Note - Dark Mode */
+.note-item.dark {
+  background-color: #374151;
+  color: #ffffff;
+  border: 1px solid #6b7280;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #dc2626;
+  color: #ffffff;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.delete-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Empty Notes Message */
+.empty-message {
+  text-align: center;
+  padding: 35px 15px;
+  border-radius: 10px;
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* Empty Message - Light Mode */
+.app.light .empty-message {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+/* Empty Message - Dark Mode */
+.app.dark .empty-message {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+/* Button Focus Accessibility */
+button:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 3px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+  .app {
+    padding: 25px 15px;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  .note-input {
+    flex-direction: column;
+  }
+
+  .note-input input {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .note-item {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .delete-btn {
+    padding: 9px 12px;
+  }
+}
